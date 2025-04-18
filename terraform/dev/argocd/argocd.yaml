@@ -3,13 +3,13 @@ global:
 repoServer:
   resources:
     requests:
-      cpu: 100m
-      memory: 128Mi            
+      cpu: 200m
+      memory: 256Mi            
 server:
   resources:
     requests:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 200m
+      memory: 256Mi
   config:
     url: "https://argo.jebro.dev" 
   extraArgs:
