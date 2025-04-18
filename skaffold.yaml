@@ -7,29 +7,29 @@ build:
     envTemplate:
       template: "{{.IMAGE_NAME}}:{{.GIT_COMMIT}}"
   artifacts:
-    - image: emailservice
+    - image: micro/emailservice
       context: src/emailservice
-    - image: productcatalogservice
+    - image: micro/productcatalogservice
       context: src/productcatalogservice
-    - image: recommendationservice
+    - image: micro/recommendationservice
       context: src/recommendationservice
-    - image: shoppingassistantservice
+    - image: micro/shoppingassistantservice
       context: src/shoppingassistantservice
-    - image: shippingservice
+    - image: micro/shippingservice
       context: src/shippingservice
-    - image: checkoutservice
+    - image: micro/checkoutservice
       context: src/checkoutservice
-    - image: paymentservice
+    - image: micro/paymentservice
       context: src/paymentservice
-    - image: currencyservice
+    - image: micro/currencyservice
       context: src/currencyservice
-    - image: cartservice
+    - image: micro/cartservice
       context: src/cartservice/src
       docker:
         dockerfile: Dockerfile
-    - image: frontend
+    - image: micro/frontend
       context: src/frontend
-    - image: adservice
+    - image: micro/adservice
       context: src/adservice
   local:
     push: true

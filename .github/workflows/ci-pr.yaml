@@ -24,6 +24,9 @@ jobs:
     permissions:
       id-token: write
       contents: read
+    
+    env:
+      ECR_URI: 565467140001.dkr.ecr.us-east-1.amazonaws.com
 
     steps:
       - name: Checkout repository
@@ -42,6 +45,10 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
+      
+      - name: Replace image names with full ECR URI
+        run: |
+          sed -i "s|image: micro/|image: $ECR_URI/|" skaffold.yaml
 
       - name: Install Skaffold
         run: |
