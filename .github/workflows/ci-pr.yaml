@@ -1,7 +1,7 @@
 name: Build and Push Microservices to ECR
 
 on:
-  push:
+  pull_request:
     branches:
       - main
     paths-ignore:
