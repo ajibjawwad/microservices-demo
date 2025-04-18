@@ -1,0 +1,28 @@
+global:
+  domain: https://argo.jebro.dev
+repoServer:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi            
+server:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  config:
+    url: "https://argo.jebro.dev" 
+  extraArgs:
+    - --insecure    
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    annotations:
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+      nginx.ingress.kubernetes.io/cors-expose-headers: "*, X-CustomResponseHeader"
+      nlb.ingress.kubernetes.io/scheme: internet-facing
+      nlb.ingress.kubernetes.io/target-type: instance
+      nlb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+      nlb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:us-east-1:565467140001:certificate/186d46db-5e1a-4fc8-8481-47c5125d15d3"
+    hosts:
+      - argo.jebro.dev

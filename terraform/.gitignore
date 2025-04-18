@@ -1,0 +1,5 @@
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+main_backend.tf
+main_provider.tf
