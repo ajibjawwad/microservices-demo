@@ -43,7 +43,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: cartservice
+        image: 565467140001.dkr.ecr.us-east-1.amazonaws.com/cartservice
         ports:
         - containerPort: 7070
         env:
